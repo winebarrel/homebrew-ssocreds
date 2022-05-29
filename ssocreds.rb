@@ -5,21 +5,21 @@
 class Ssocreds < Formula
   desc "A tool to get temporary credentials from AWS SSO."
   homepage "https://github.com/winebarrel/ssocreds"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/ssocreds/releases/download/v0.1.0/ssocreds_0.1.0_darwin_amd64.tar.gz"
-      sha256 "293e8abd58601d0a5c3b61e8bf65967bfa6938edf37fe58b41e7df469abf83f5"
+    if Hardware::CPU.arm?
+      url "https://github.com/winebarrel/ssocreds/releases/download/v0.2.0/ssocreds_0.2.0_darwin_arm64.tar.gz"
+      sha256 "c984c3256916b073b0d6b0acefdb2635569b2a4cd95e9a34de2d2b90e98d41f1"
 
       def install
         bin.install 'ssocreds'
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/winebarrel/ssocreds/releases/download/v0.1.0/ssocreds_0.1.0_darwin_arm64.tar.gz"
-      sha256 "b4aa34da594b3df66924492eeeadd9df38614f7de50785ea22bc15ea3da94bc7"
+    if Hardware::CPU.intel?
+      url "https://github.com/winebarrel/ssocreds/releases/download/v0.2.0/ssocreds_0.2.0_darwin_amd64.tar.gz"
+      sha256 "b8498178bf79e9cf08d084a1ca827fbfd2cedfb7c7f3df146fe1043ee8e51a37"
 
       def install
         bin.install 'ssocreds'
@@ -28,17 +28,17 @@ class Ssocreds < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/winebarrel/ssocreds/releases/download/v0.1.0/ssocreds_0.1.0_linux_arm64.tar.gz"
-      sha256 "7bec66effe3e3f4786d89b59ebf596d5fdc30727f0d7335ee2f0fed093951f1b"
+    if Hardware::CPU.intel?
+      url "https://github.com/winebarrel/ssocreds/releases/download/v0.2.0/ssocreds_0.2.0_linux_amd64.tar.gz"
+      sha256 "37b5e1f217b4b2c42d4193b3c900b0356d3421a80fbc6ba4bdd69a9e51d0ceb6"
 
       def install
         bin.install 'ssocreds'
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/ssocreds/releases/download/v0.1.0/ssocreds_0.1.0_linux_amd64.tar.gz"
-      sha256 "1ea9de0a6ac1ccc67bd4cd79ed38cf73fe36592523d134f832eeeddb78a5ece9"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/winebarrel/ssocreds/releases/download/v0.2.0/ssocreds_0.2.0_linux_arm64.tar.gz"
+      sha256 "10eee34b8bd524d9c80e638126d0037404292a4dcc614fbaaf391672dd23b769"
 
       def install
         bin.install 'ssocreds'
